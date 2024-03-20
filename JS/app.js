@@ -3,8 +3,8 @@ console.log('');
 
 // // chiedere utente inserimento parola
 
-// const word = prompt('Inserisci una parola : ');
-// console.log('la parola inserita è : ' , word);
+const word = prompt('Inserisci una parola : ');
+console.log('la parola inserita è : ' , word);
 
 // //crea funzione verifica palindromo
 
@@ -40,11 +40,17 @@ if(result) {
 //inserisce numero da 1 a 5
 // generare numero random da 1 a 5 tramite funzione
 //sommo numeo scelto e random e stabilisco se la somma è pari tramite funzione
+let choice = '0';
+let choiceNumber = 0;
 
-let choice = prompt('Indovina se uscirà un numero pari o dispari');
+do {let choice = prompt('Indovina se uscirà un numero pari o dispari');
     console.log('Hai scelto' , choice);
-let choiceNumber = parseInt(prompt('Inserisci un numero a scelta tar 1 e 5  : '));
+} while (choice != 'pari' | choice != 'dispari')
+
+do {let choiceNumber = parseInt(prompt('Inserisci un numero a scelta tar 1 e 5  : '));
     console.log('Il numero inserito è : ', choiceNumber);
+} while (choiceNumber < 1 | choiceNumber > 5);
+
 function createRandom (minValue , maxValue) {
     const random = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
     return random;
